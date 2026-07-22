@@ -12,7 +12,7 @@ body {
     background-color: #f8f5f0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Permet de pousser le footer en bas si la page est vide */
+    min-height: 100vh;
 }
 
 /* ==========================================
@@ -34,18 +34,18 @@ body {
    ========================================== */
 .navbar {
     background-color: #c9b189;
-    width: max-content;   /* La barre prend la largeur exacte de son contenu */
-    margin: 0 auto;       /* Centre la barre de menu sur la page */
-    border-radius: 4px;   /* Adoucit les coins de la barre */
+    width: max-content;   
+    margin: 0 auto;       
+    border-radius: 4px;   
     border: 1px solid #b59a6e; 
-    padding: 0 10px;      /* Ajoute un léger espace intérieur aux extrémités */
+    padding: 0 10px;      
 }
 
 .navbar > ul.nav-links {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 15px;            /* Ajout de l'espacement régulier entre chaque bouton */
+    gap: 15px;            
 }
 
 .navbar li {
@@ -58,30 +58,27 @@ body {
     padding: 18px 25px;
     display: flex;
     align-items: center;
-    gap: 8px;             /* Espace entre le texte et la flèche */
+    gap: 8px;             
     font-weight: bold;
-    border-radius: 4px;   /* Arrondit aussi les angles du fond au survol */
-    transition: background-color 0.2s ease; /* Transition fluide au survol */
+    border-radius: 4px;   
+    transition: background-color 0.2s ease; 
 }
 
-/* Style pour la page active et au survol */
 .navbar a:hover,
 .navbar a.active {
     background-color: #b59a6e;
 }
 
-/* Création de la flèche en pur CSS */
 .arrow {
     display: inline-block;
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid white; /* Dessine un triangle vers le bas */
+    border-top: 5px solid white; 
     transition: transform 0.3s ease;
 }
 
-/* Fait pivoter la flèche vers le haut quand on survole le menu sur ordinateur */
 .dropdown:hover .arrow {
     transform: rotate(180deg);
 }
@@ -100,7 +97,6 @@ body {
     z-index: 100;
 }
 
-/* Zone invisible de sécurité pour garder le survol actif en passant de la barre au sous-menu */
 .dropdown::after {
     content: '';
     position: absolute;
@@ -127,23 +123,26 @@ body {
     color: #9b7a4b;
 }
 
-/* Affichage au survol */
 .dropdown:hover .submenu {
     display: block;
 }
 
-/* Bouton burger masqué par défaut sur ordinateur */
 .burger-menu {
     display: none;
 }
 
 /* ==========================================
-   5. CONTENU GÉNÉRAL
+   5. CONTENU GÉNÉRAL & SERVICES
    ========================================== */
 main {
-    text-align: center;
     padding: 60px 20px;
-    flex: 1; /* Force le contenu à occuper l'espace restant pour bloquer le footer en bas */
+    flex: 1; 
+}
+
+.services-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
 }
 
 h1 {
@@ -151,6 +150,85 @@ h1 {
     margin-bottom: 20px;
 }
 
+.services-intro p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-content h2 {
+    color: #4a4238;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.card-content p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex: 1; 
+}
+
+.btn-card {
+    display: inline-block;
+    background-color: #c9b189;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    align-self: flex-start; 
+    transition: background-color 0.2s ease;
+}
+
+.btn-card:hover {
+    background-color: #b59a6e;
+}
 /* ==========================================
    6. FORMULAIRE DE CONTACT
    ========================================== */
@@ -161,7 +239,7 @@ h1 {
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    text-align: left; /* Aligne le texte du formulaire à gauche pour la lecture */
+    text-align: left;
 }
 
 .contact-subtitle {
@@ -176,7 +254,6 @@ h1 {
     gap: 20px;
 }
 
-/* Aligne deux champs côte à côte sur écran d'ordinateur */
 .form-row {
     display: flex;
     gap: 20px;
@@ -208,7 +285,6 @@ h1 {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Effet lumineux de focus quand on clique dans un champ */
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
@@ -218,10 +294,9 @@ h1 {
 }
 
 .form-group textarea {
-    resize: vertical; /* Permet uniquement d'agrandir verticalement le message */
+    resize: vertical;
 }
 
-/* Bouton de soumission du formulaire */
 .btn-submit {
     background-color: #c9b189;
     color: white;
@@ -231,7 +306,7 @@ h1 {
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
-    align-self: center; /* Centre le bouton horizontalement */
+    align-self: center;
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
@@ -240,19 +315,80 @@ h1 {
 }
 
 .btn-submit:active {
-    transform: scale(0.98); /* Effet de pression au clic */
+    transform: scale(0.98);
 }
 
 /* ==========================================
-   7. PIED DE PAGE (FOOTER)
+   7. PIED DE PAGE (FOOTER) & AVIS GOOGLE
    ========================================== */
 footer {
-    background-color: #4a4238; /* Couleur sombre élégante assortie au doré */
+    background-color: #4a4238;
     color: #f8f5f0;
     text-align: center;
-    padding: 25px 20px;
+    padding: 35px 20px;
     font-size: 14px;
     margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-google-reviews {
+    background-color: rgba(255, 255, 255, 0.05); 
+    padding: 20px;
+    border-radius: 6px;
+    max-width: 400px;
+    margin: 0 auto 25px auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.google-logo {
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.review-title {
+    color: white;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.stars {
+    color: #FBBC05; 
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.rating-text {
+    color: #dbd3c7;
+    margin-bottom: 12px;
+}
+
+.btn-google {
+    display: inline-block;
+    color: #c9b189;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    border: 1px solid #c9b189;
+    padding: 6px 15px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-google:hover {
+    background-color: #c9b189;
+    color: #4a4238;
+}
+
+.footer-separator {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
 }
 
 .footer-content p {
@@ -274,7 +410,6 @@ footer {
    8. RESPONSIVE : SMARTPHONE & TABLETTE (<768px)
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* Rend la barre de menu transparente sur mobile pour s'adapter à la largeur */
     .navbar {
         width: 100%;
         border: none;
@@ -282,7 +417,6 @@ footer {
         padding: 0;
     }
 
-    /* Affiche le bouton burger et le positionne à droite du logo */
     .burger-menu {
         display: block;
         position: absolute;
@@ -295,7 +429,6 @@ footer {
         padding: 15px;
     }
 
-    /* Configuration des 3 barres en noir */
     .burger-menu .bar {
         display: block;
         width: 25px;
@@ -305,17 +438,15 @@ footer {
         transition: all 0.3s ease;
     }
 
-    /* Transforme la barre horizontale en liste verticale masquée */
     .navbar > ul.nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
         background-color: #c9b189;
         padding: 10px 0;
-        gap: 0; /* Supprime l'espacement d'ordinateur pour le mode vertical */
+        gap: 0;
     }
 
-    /* Affichage du menu mobile via JavaScript */
     .navbar > ul.nav-links.active {
         display: flex;
     }
@@ -324,10 +455,9 @@ footer {
         padding: 15px 25px;
         width: 100%;
         border-radius: 0;
-        justify-content: space-between; /* Aligne le texte à gauche et la flèche à droite */
+        justify-content: space-between;
     }
 
-    /* Désactive le survol pour éviter les bugs sur écran tactile */
     .dropdown:hover .submenu {
         display: none;
     }
@@ -336,7 +466,6 @@ footer {
         transform: none;
     }
 
-    /* Réajuste le design du sous-menu pour le mode mobile */
     .submenu {
         position: static;
         width: 100%;
@@ -345,7 +474,6 @@ footer {
         padding-left: 20px;
     }
 
-    /* Affichage du sous-menu mobile via JavaScript */
     .mobile-click.open .submenu {
         display: block;
     }
@@ -354,7 +482,6 @@ footer {
         color: #4a4238;
     }
 
-    /* Animation des barres du burger en "X" lors de l'ouverture */
     .burger-menu.toggle .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
@@ -365,23 +492,30 @@ footer {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* Rotation de la flèche sur mobile */
     .mobile-click.open .arrow {
         transform: rotate(180deg);
     }
 
-    /* Adaptations pour le formulaire de contact sur mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card-image {
+        height: 200px; 
+    }
+
     .contact-container {
         padding: 20px;
         margin: 0 10px;
     }
 
     .form-row {
-        flex-direction: column; /* Aligne les champs verticalement sur smartphone */
+        flex-direction: column;
         gap: 20px;
     }
 
     .btn-submit {
-        width: 100%; /* Le bouton prend toute la largeur sur smartphone */
+        width: 100%;
     }
 }
