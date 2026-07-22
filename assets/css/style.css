@@ -1,5 +1,4 @@
 /* RESET */
-
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +6,12 @@
 }
 
 /* PAGE */
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f5f0;
 }
 
 /* LOGO */
-
 .logo-container {
     text-align: center;
     padding: 25px 0;
@@ -26,13 +23,13 @@ body {
     height: auto;
 }
 
-/* MENU */
-
+/* MENU PRINCIPAL */
 .navbar {
     background-color: #c9b189;
 }
 
-.navbar ul {
+/* Correction ici : Le signe ">" applique le flex UNIQUEMENT au premier niveau du menu */
+.navbar > ul {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -54,8 +51,7 @@ body {
     background-color: #b59a6e;
 }
 
-/* SOUS MENU */
-
+/* SOUS-MENU */
 .submenu {
     display: none;
     position: absolute;
@@ -63,18 +59,35 @@ body {
     min-width: 220px;
     top: 100%;
     left: 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Optionnel : apporte du relief */
+    z-index: 100; /* Assure que le menu passe au-dessus du contenu du site */
 }
 
+/* Correction ici : Force les éléments du sous-menu à s'empiler verticalement */
+.submenu li {
+    display: block;
+    width: 100%;
+}
+
+/* Style des liens à l'intérieur du sous-menu */
 .submenu a {
     color: #555;
+    padding: 12px 20px; /* Taille de zone cliquable adaptée pour le sous-menu */
+    font-weight: normal; /* Optionnel : plus fin pour différencier du menu principal */
 }
 
+/* Changement de couleur au survol des liens du sous-menu */
+.submenu a:hover {
+    background-color: #f1ebd9;
+    color: #9b7a4b;
+}
+
+/* Affichage au survol */
 .dropdown:hover .submenu {
     display: block;
 }
 
 /* CONTENU */
-
 main {
     text-align: center;
     padding: 60px 20px;
