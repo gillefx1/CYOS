@@ -1,11 +1,12 @@
-/* RESET */
+/* ==========================================
+   1. RESET & BASES
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* PAGE */
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f5f0;
@@ -14,7 +15,9 @@ body {
     min-height: 100vh; /* Permet de pousser le footer en bas si la page est vide */
 }
 
-/* LOGO */
+/* ==========================================
+   2. LOGO
+   ========================================== */
 .logo-container {
     text-align: center;
     padding: 25px 0;
@@ -26,16 +29,16 @@ body {
     height: auto;
 }
 
-/* MENU PRINCIPAL */
+/* ==========================================
+   3. MENU PRINCIPAL (ORDINATEUR)
+   ========================================== */
 .navbar {
     background-color: #c9b189;
     width: max-content;   /* La barre prend la largeur exacte de son contenu */
     margin: 0 auto;       /* Centre la barre de menu sur la page */
     border-radius: 4px;   /* Adoucit les coins de la barre */
-    
-    /* Ajout de la fine bordure */
     border: 1px solid #b59a6e; 
-    padding: 0 10px;      /* Ajoute un léger espace intérieur aux extrémités de la barre */
+    padding: 0 10px;      /* Ajoute un léger espace intérieur aux extrémités */
 }
 
 .navbar > ul.nav-links {
@@ -83,7 +86,9 @@ body {
     transform: rotate(180deg);
 }
 
-/* SOUS-MENU (ORDINATEUR) */
+/* ==========================================
+   4. SOUS-MENU (ORDINATEUR)
+   ========================================== */
 .submenu {
     display: none;
     position: absolute;
@@ -127,27 +132,14 @@ body {
     display: block;
 }
 
+/* Bouton burger masqué par défaut sur ordinateur */
+.burger-menu {
+    display: none;
+}
 
-        /* On affiche le bouton burger */
-    .burger-menu {
-        display: block;
-        position: absolute;
-        top: -65px; /* Aligne le bouton verticalement à côté de votre logo */
-        right: 15px;
-        z-index: 110;
-    }
-
-    /* Correction ici : Les 3 lignes s'affichent désormais en noir */
-    .burger-menu .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: #000000; /* Couleur noire pour un contraste parfait */
-        margin: 5px auto;
-        transition: all 0.3s ease;
-    }
-
-/* CONTENU */
+/* ==========================================
+   5. CONTENU GÉNÉRAL
+   ========================================== */
 main {
     text-align: center;
     padding: 60px 20px;
@@ -159,7 +151,101 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* PIED DE PAGE */
+/* ==========================================
+   6. FORMULAIRE DE CONTACT
+   ========================================== */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left; /* Aligne le texte du formulaire à gauche pour la lecture */
+}
+
+.contact-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Aligne deux champs côte à côte sur écran d'ordinateur */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #4a4238;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dbd3c7;
+    border-radius: 4px;
+    background-color: #faf9f6;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #333;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Effet lumineux de focus quand on clique dans un champ */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #c9b189;
+    box-shadow: 0 0 0 3px rgba(201, 177, 137, 0.2);
+    background-color: #ffffff;
+}
+
+.form-group textarea {
+    resize: vertical; /* Permet uniquement d'agrandir verticalement le message */
+}
+
+/* Bouton de soumission du formulaire */
+.btn-submit {
+    background-color: #c9b189;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center; /* Centre le bouton horizontalement */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+    background-color: #b59a6e;
+}
+
+.btn-submit:active {
+    transform: scale(0.98); /* Effet de pression au clic */
+}
+
+/* ==========================================
+   7. PIED DE PAGE (FOOTER)
+   ========================================== */
 footer {
     background-color: #4a4238; /* Couleur sombre élégante assortie au doré */
     color: #f8f5f0;
@@ -185,16 +271,38 @@ footer {
 }
 
 /* ==========================================
-   RESPONSIVE : SMARTPHONE & TABLETTE (<768px)
+   8. RESPONSIVE : SMARTPHONE & TABLETTE (<768px)
    ========================================== */
 @media screen and (max-width: 768px) {
-    /* Affiche le bouton burger */
+    /* Rend la barre de menu transparente sur mobile pour s'adapter à la largeur */
+    .navbar {
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    /* Affiche le bouton burger et le positionne à droite du logo */
     .burger-menu {
         display: block;
         position: absolute;
-        top: 10px;
+        top: -65px; 
         right: 15px;
         z-index: 110;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 15px;
+    }
+
+    /* Configuration des 3 barres en noir */
+    .burger-menu .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #000000; 
+        margin: 5px auto;
+        transition: all 0.3s ease;
     }
 
     /* Transforme la barre horizontale en liste verticale masquée */
@@ -204,6 +312,7 @@ footer {
         width: 100%;
         background-color: #c9b189;
         padding: 10px 0;
+        gap: 0; /* Supprime l'espacement d'ordinateur pour le mode vertical */
     }
 
     /* Affichage du menu mobile via JavaScript */
@@ -214,6 +323,7 @@ footer {
     .navbar a {
         padding: 15px 25px;
         width: 100%;
+        border-radius: 0;
         justify-content: space-between; /* Aligne le texte à gauche et la flèche à droite */
     }
 
@@ -258,5 +368,20 @@ footer {
     /* Rotation de la flèche sur mobile */
     .mobile-click.open .arrow {
         transform: rotate(180deg);
+    }
+
+    /* Adaptations pour le formulaire de contact sur mobile */
+    .contact-container {
+        padding: 20px;
+        margin: 0 10px;
+    }
+
+    .form-row {
+        flex-direction: column; /* Aligne les champs verticalement sur smartphone */
+        gap: 20px;
+    }
+
+    .btn-submit {
+        width: 100%; /* Le bouton prend toute la largeur sur smartphone */
     }
 }
