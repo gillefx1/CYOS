@@ -29,9 +29,10 @@ body {
 /* MENU PRINCIPAL */
 .navbar {
     background-color: #c9b189;
+    position: relative; /* Important pour positionner le bouton burger */
 }
 
-.navbar > ul {
+.navbar > ul.nav-links {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -45,24 +46,20 @@ body {
     color: white;
     text-decoration: none;
     padding: 18px 25px;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espace entre le texte et la flèche */
     font-weight: bold;
     transition: background-color 0.2s ease; /* Transition fluide au survol */
 }
 
-/* Option 2 : Style pour la page active et au survol */
+/* Style pour la page active et au survol */
 .navbar a:hover,
 .navbar a.active {
     background-color: #b59a6e;
 }
 
-/* Option 1 : Création de la flèche en pur CSS */
-.navbar a {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Espace entre le texte et la flèche */
-}
-
+/* Création de la flèche en pur CSS */
 .arrow {
     display: inline-block;
     width: 0;
@@ -73,12 +70,12 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Fait pivoter la flèche vers le haut quand on survole le menu */
+/* Fait pivoter la flèche vers le haut quand on survole le menu sur ordinateur */
 .dropdown:hover .arrow {
     transform: rotate(180deg);
 }
 
-/* SOUS-MENU */
+/* SOUS-MENU (ORDINATEUR) */
 .submenu {
     display: none;
     position: absolute;
@@ -107,8 +104,27 @@ body {
     color: #9b7a4b;
 }
 
+/* Affichage au survol sur ordinateur */
 .dropdown:hover .submenu {
     display: block;
+}
+
+/* BOUTON BURGER (Caché par défaut sur ordinateur) */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 15px;
+}
+
+.burger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px auto;
+    transition: all 0.3s ease;
 }
 
 /* CONTENU */
@@ -123,7 +139,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Option 3 : Design du pied de page */
+/* PIED DE PAGE */
 footer {
     background-color: #4a4238; /* Couleur sombre élégante assortie au doré */
     color: #f8f5f0;
@@ -146,4 +162,81 @@ footer {
 .footer-links a:hover {
     text-decoration: underline;
     color: white;
+}
+
+/* ==========================================
+   RESPONSIVE : SMARTPHONE & TABLETTE (<768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    /* Affiche le bouton burger */
+    .burger-menu {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        z-index: 110;
+    }
+
+    /* Transforme la barre horizontale en liste verticale masquée */
+    .navbar > ul.nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #c9b189;
+        padding: 10px 0;
+    }
+
+    /* Affichage du menu mobile via JavaScript */
+    .navbar > ul.nav-links.active {
+        display: flex;
+    }
+
+    .navbar a {
+        padding: 15px 25px;
+        width: 100%;
+        justify-content: space-between; /* Aligne le texte à gauche et la flèche à droite */
+    }
+
+    /* Désactive le survol pour éviter les bugs sur écran tactile */
+    .dropdown:hover .submenu {
+        display: none;
+    }
+    
+    .dropdown:hover .arrow {
+        transform: none;
+    }
+
+    /* Réajuste le design du sous-menu pour le mode mobile */
+    .submenu {
+        position: static;
+        width: 100%;
+        background-color: #f1ebd9;
+        box-shadow: none;
+        padding-left: 20px;
+    }
+
+    /* Affichage du sous-menu mobile via JavaScript */
+    .mobile-click.open .submenu {
+        display: block;
+    }
+
+    .submenu a {
+        color: #4a4238;
+    }
+
+    /* Animation des barres du burger en "X" lors de l'ouverture */
+    .burger-menu.toggle .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .burger-menu.toggle .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-menu.toggle .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Rotation de la flèche sur mobile */
+    .mobile-click.open .arrow {
+        transform: rotate(180deg);
+    }
 }
