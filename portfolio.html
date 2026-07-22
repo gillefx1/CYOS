@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CYOS - Organisation d'événements privés</title>
-
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -13,17 +12,25 @@
 
 <header>
     <div class="logo-container">
-  
-        <img src="assets/images/logo.png" alt="Logo CYOS"> 
+        <img src="assets/images/logo.png" alt="Logo CYOS" class="logo"> 
     </div>
 
     <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
+        <!-- Bouton Burger : visible uniquement sur smartphone -->
+        <button class="burger-menu" aria-label="Ouvrir le menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Ajout de la classe nav-links pour le contrôle CSS et JS -->
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Accueil</a></li>
             <li><a href="about.html">À propos de CYOS</a></li>
 
-            <li class="dropdown">
-                <a href="services.html">Nos Services</a>
+            <!-- Ajout des classes dropdown-toggle et mobile-click pour le sous-menu tactile -->
+            <li class="dropdown mobile-click">
+                <a href="#" class="dropdown-toggle">Nos Services <span class="arrow"></span></a>
                 <ul class="submenu">
                     <li><a href="mariage.html">Mariage</a></li>
                     <li><a href="anniversaire.html">Anniversaire</a></li>
@@ -41,6 +48,19 @@
     <h1>Bienvenue chez CYOS</h1>
     <p>Créons ensemble des événements inoubliables.</p>
 </main>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2026 CYOS - Organisation d'événements privés. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="mentions-legales.html">Mentions Légales</a> | 
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Lien vers le fichier JavaScript pour faire fonctionner le menu mobile -->
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>
