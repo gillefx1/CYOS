@@ -29,7 +29,9 @@ body {
 /* MENU PRINCIPAL */
 .navbar {
     background-color: #c9b189;
-    position: relative; /* Important pour positionner le bouton burger */
+    width: max-content;   /* Correction : La barre prend la largeur exacte de son contenu */
+    margin: 0 auto;       /* Correction : Centre toute la barre de menu sur la page */
+    border-radius: 4px;   /* Optionnel : Adoucit les coins de la barre */
 }
 
 .navbar > ul.nav-links {
