@@ -29,15 +29,20 @@ body {
 /* MENU PRINCIPAL */
 .navbar {
     background-color: #c9b189;
-    width: max-content;   /* Correction : La barre prend la largeur exacte de son contenu */
-    margin: 0 auto;       /* Correction : Centre toute la barre de menu sur la page */
-    border-radius: 4px;   /* Optionnel : Adoucit les coins de la barre */
+    width: max-content;   /* La barre prend la largeur exacte de son contenu */
+    margin: 0 auto;       /* Centre la barre de menu sur la page */
+    border-radius: 4px;   /* Adoucit les coins de la barre */
+    
+    /* Ajout de la fine bordure */
+    border: 1px solid #b59a6e; 
+    padding: 0 10px;      /* Ajoute un léger espace intérieur aux extrémités de la barre */
 }
 
 .navbar > ul.nav-links {
     list-style: none;
     display: flex;
     justify-content: center;
+    gap: 15px;            /* Ajout de l'espacement régulier entre chaque bouton */
 }
 
 .navbar li {
@@ -50,8 +55,9 @@ body {
     padding: 18px 25px;
     display: flex;
     align-items: center;
-    gap: 8px; /* Espace entre le texte et la flèche */
+    gap: 8px;             /* Espace entre le texte et la flèche */
     font-weight: bold;
+    border-radius: 4px;   /* Arrondit aussi les angles du fond au survol */
     transition: background-color 0.2s ease; /* Transition fluide au survol */
 }
 
