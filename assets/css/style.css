@@ -95,6 +95,16 @@ body {
     z-index: 100;
 }
 
+/* Zone invisible de sécurité pour garder le survol actif en passant de la barre au sous-menu */
+.dropdown::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+}
+
 .submenu li {
     display: block;
     width: 100%;
@@ -112,10 +122,11 @@ body {
     color: #9b7a4b;
 }
 
-/* Affichage au survol sur ordinateur */
+/* Affichage au survol */
 .dropdown:hover .submenu {
     display: block;
 }
+
 
         /* On affiche le bouton burger */
     .burger-menu {
