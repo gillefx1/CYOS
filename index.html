@@ -16,14 +16,21 @@
     </div>
 
     <nav class="navbar">
-        <ul>
-   
+        <!-- Bouton Burger : visible uniquement sur smartphone -->
+        <button class="burger-menu" aria-label="Ouvrir le menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Ajout de la classe nav-links pour le contrôle CSS et JS -->
+        <ul class="nav-links">
             <li><a href="index.html" class="active">Accueil</a></li>
             <li><a href="about.html">À propos de CYOS</a></li>
 
-            <li class="dropdown">
-            
-                <a href="services.html">Nos Services <span class="arrow"></span></a>
+            <!-- Ajout des classes dropdown-toggle et mobile-click pour le sous-menu tactile -->
+            <li class="dropdown mobile-click">
+                <a href="#" class="dropdown-toggle">Nos Services <span class="arrow"></span></a>
                 <ul class="submenu">
                     <li><a href="mariage.html">Mariage</a></li>
                     <li><a href="anniversaire.html">Anniversaire</a></li>
@@ -51,6 +58,9 @@
         </div>
     </div>
 </footer>
+
+<!-- Lien vers le fichier JavaScript pour faire fonctionner le menu mobile -->
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>
