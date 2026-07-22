@@ -109,20 +109,21 @@ body {
     display: block;
 }
 
-    /* On affiche le bouton burger */
+        /* On affiche le bouton burger */
     .burger-menu {
         display: block;
         position: absolute;
-        top: -65px; /* Ajuste la position pour le centrer verticalement face au logo */
+        top: -65px; /* Aligne le bouton verticalement à côté de votre logo */
         right: 15px;
         z-index: 110;
     }
 
+    /* Correction ici : Les 3 lignes s'affichent désormais en noir */
     .burger-menu .bar {
         display: block;
         width: 25px;
         height: 3px;
-        background-color: #4a4238; /* Changement ici : Marron foncé pour un contraste maximal sur fond clair */
+        background-color: #000000; /* Couleur noire pour un contraste parfait */
         margin: 5px auto;
         transition: all 0.3s ease;
     }
