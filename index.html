@@ -15,31 +15,8 @@
             display: flex;
             height: 100vh;
             overflow: hidden;
-            position: relative;
+            background-color: #000000;
         }
-        /* Conteneur du Logo */
-        .logo-container {
-            position: absolute;
-            top: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 15px 25px;
-            border-radius: 8px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        .logo-container:hover {
-            background: rgba(0, 0, 0, 0.4);
-        }
-        .logo-container img {
-            height: 60px; /* Ajuste la hauteur selon tes besoins */
-            width: auto;
-            display: block;
-        }
-        /* Fenêtres de redirection */
         .half {
             position: relative;
             width: 50%;
@@ -53,78 +30,110 @@
             transition: width 0.5s ease, filter 0.3s ease;
             padding: 40px;
         }
+        /* Style des logos internes */
+        .logo-brand {
+            height: 70px; /* Ajuste la taille de ton logo ici */
+            width: auto;
+            margin-bottom: 25px;
+            display: block;
+            transition: transform 0.3s ease;
+            /* Si ton logo est noir, cette ligne le passe en blanc proprement pour ressortir sur les fonds sombres */
+            filter: brightness(0) invert(1); 
+        }
+        .half:hover .logo-brand {
+            transform: scale(1.05);
+        }
         /* Fenêtre Événement */
         .event {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://unsplash.com') center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('https://unsplash.com') center/cover;
             color: #ffffff;
         }
         /* Fenêtre Héritage */
         .heritage {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://unsplash.com') center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://unsplash.com') center/cover;
             color: #ffffff;
-            border-left: 2px solid rgba(255,255,255,0.1);
+            border-left: 1px solid rgba(255,255,255,0.1);
         }
-        /* Effets de survol */
-        .half:hover {
-            width: 55%;
-            filter: brightness(1.1);
-        }
-        .half:hover ~ .half {
-            width: 45%;
-        }
-        body:has(.heritage:hover) .event {
-            width: 45%;
+        /* Effets de survol sur ordinateur */
+        @media (min-width: 769px) {
+            .half:hover {
+                width: 55%;
+                filter: brightness(1.1);
+            }
+            .half:hover ~ .half {
+                width: 45%;
+            }
+            body:has(.heritage:hover) .event {
+                width: 45%;
+            }
         }
         h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            letter-spacing: 3px;
             font-weight: 300;
+            text-transform: uppercase;
         }
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 20px;
             font-weight: 400;
             opacity: 0.9;
+            letter-spacing: 1px;
         }
         p {
-            font-size: 1rem;
-            max-width: 400px;
+            font-size: 0.95rem;
+            max-width: 380px;
             line-height: 1.6;
-            opacity: 0.8;
+            opacity: 0.75;
         }
         .btn {
             margin-top: 30px;
-            padding: 12px 30px;
-            border: 1px solid #ffffff;
+            padding: 12px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
             color: #ffffff;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
             background: transparent;
             transition: all 0.3s ease;
         }
         .half:hover .btn {
             background: #ffffff;
             color: #000000;
+            border-color: #ffffff;
         }
+        /* Version Mobile & Tablette */
         @media (max-width: 768px) {
-            body { flex-direction: column; overflow: auto; }
-            .half { width: 100% !important; height: 50vh; }
-            .logo-container { top: 20px; padding: 10px 15px; }
-            .logo-container img { height: 45px; }
+            body { 
+                flex-direction: column; 
+                overflow: y-auto; 
+            }
+            .half { 
+                width: 100% !important; 
+                height: 50vh; 
+                padding: 30px;
+                border-left: none;
+            }
+            .half:first-child {
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .logo-brand {
+                height: 55px; /* Plus petit sur mobile */
+                margin-bottom: 15px;
+            }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.1rem; margin-bottom: 10px; }
+            p { font-size: 0.85rem; max-width: 100%; }
+            .btn { margin-top: 20px; padding: 10px 25px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Logo central supérieur -->
-    <div class="logo-container">
-        <img src="assets/images/logo.png" alt="CYOS Logo">
-    </div>
-
     <!-- Fenêtre CYOS EVENT -->
     <a href="https://cyos-event.be" class="half event">
+        <img src="asset/images/logo.png" alt="CYOS Logo" class="logo-brand">
         <h1>CYOS</h1>
         <h2>Choose Your Own Story</h2>
         <p>De l'idée originale à la coordination du jour J, nous orchestrons vos plus beaux moments de vie.</p>
@@ -133,6 +142,7 @@
 
     <!-- Fenêtre CYOS HERITAGE -->
     <a href="https://cyos-heritage.com" class="half heritage">
+        <img src="asset/images/logo.png" alt="CYOS Logo" class="logo-brand">
         <h1>CYOS</h1>
         <h2>Continue Your Own Story</h2>
         <p>Transmettez votre histoire, vos valeurs et préservez votre patrimoine familial pour les générations futures.</p>
