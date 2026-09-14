@@ -15,7 +15,31 @@
             display: flex;
             height: 100vh;
             overflow: hidden;
+            position: relative;
         }
+        /* Conteneur du Logo */
+        .logo-container {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px 25px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .logo-container:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .logo-container img {
+            height: 60px; /* Ajuste la hauteur selon tes besoins */
+            width: auto;
+            display: block;
+        }
+        /* Fenêtres de redirection */
         .half {
             position: relative;
             width: 50%;
@@ -87,10 +111,17 @@
         @media (max-width: 768px) {
             body { flex-direction: column; overflow: auto; }
             .half { width: 100% !important; height: 50vh; }
+            .logo-container { top: 20px; padding: 10px 15px; }
+            .logo-container img { height: 45px; }
         }
     </style>
 </head>
 <body>
+
+    <!-- Logo central supérieur -->
+    <div class="logo-container">
+        <img src="asset/images/logo.png" alt="CYOS Logo">
+    </div>
 
     <!-- Fenêtre CYOS EVENT -->
     <a href="https://cyos-event.be" class="half event">
