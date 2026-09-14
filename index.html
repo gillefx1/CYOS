@@ -11,11 +11,12 @@
             padding: 0;
         }
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Playfair Display', 'Didot', 'Georgia', serif;
             display: flex;
             height: 100vh;
             overflow: hidden;
-            background-color: #000000;
+            background-color: #fcfbfa; /* Blanc chaud / Ivoire */
+            color: #333230; /* Anthracite doux */
         }
         .half {
             position: relative;
@@ -27,107 +28,110 @@
             align-items: center;
             text-align: center;
             text-decoration: none;
-            transition: width 0.5s ease, filter 0.3s ease;
-            padding: 40px;
+            transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
+            padding: 50px;
         }
-        /* Style des logos internes */
+        /* Style des logos - Dossier corrigé en assets/images/ */
         .logo-brand {
-            height: 70px; /* Ajuste la taille de ton logo ici */
+            height: 80px; 
             width: auto;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             display: block;
-            transition: transform 0.3s ease;
-            /* Si ton logo est noir, cette ligne le passe en blanc proprement pour ressortir sur les fonds sombres */
-            filter: brightness(0) invert(1); 
+            transition: transform 0.4s ease;
         }
         .half:hover .logo-brand {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
-        /* Fenêtre Événement */
+        /* Fenêtre Événement : Tons lumineux, festifs et chaleureux */
         .event {
-            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('https://unsplash.com') center/cover;
-            color: #ffffff;
+            background: linear-gradient(rgba(252, 251, 250, 0.82), rgba(252, 251, 250, 0.82)), url('https://unsplash.com') center/cover;
         }
-        /* Fenêtre Héritage */
+        /* Fenêtre Héritage : Tons sereins, papier texturé, intemporels */
         .heritage {
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://unsplash.com') center/cover;
-            color: #ffffff;
-            border-left: 1px solid rgba(255,255,255,0.1);
+            background: linear-gradient(rgba(245, 242, 238, 0.85), rgba(245, 242, 238, 0.85)), url('https://unsplash.com') center/cover;
+            border-left: 1px solid rgba(51, 50, 48, 0.08);
         }
-        /* Effets de survol sur ordinateur */
+        /* Effets de survol raffinés sur ordinateur */
         @media (min-width: 769px) {
             .half:hover {
-                width: 55%;
-                filter: brightness(1.1);
+                width: 54%;
             }
             .half:hover ~ .half {
-                width: 45%;
+                width: 46%;
             }
             body:has(.heritage:hover) .event {
-                width: 45%;
+                width: 46%;
             }
         }
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 5px;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             font-weight: 300;
             text-transform: uppercase;
+            color: #1a1a19;
         }
         h2 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+            font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
             font-weight: 400;
-            opacity: 0.9;
-            letter-spacing: 1px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8c857b; /* Teinte taupe/bronze douce */
         }
         p {
+            font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
             font-size: 0.95rem;
-            max-width: 380px;
-            line-height: 1.6;
-            opacity: 0.75;
+            max-width: 360px;
+            line-height: 1.7;
+            color: #595754;
+            font-weight: 300;
         }
         .btn {
-            margin-top: 30px;
-            padding: 12px 35px;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            color: #ffffff;
+            font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+            margin-top: 35px;
+            padding: 14px 40px;
+            border: 1px solid #333230;
+            color: #333230;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 2px;
+            font-weight: 500;
             background: transparent;
             transition: all 0.3s ease;
         }
         .half:hover .btn {
-            background: #ffffff;
-            color: #000000;
-            border-color: #ffffff;
+            background: #333230;
+            color: #fcfbfa;
         }
-        /* Version Mobile & Tablette */
+        /* Version Mobile & Tablette équilibrée */
         @media (max-width: 768px) {
             body { 
                 flex-direction: column; 
-                overflow: y-auto; 
+                overflow-y: auto; 
             }
             .half { 
                 width: 100% !important; 
                 height: 50vh; 
-                padding: 30px;
+                padding: 40px 20px;
                 border-left: none;
             }
             .half:first-child {
-                border-bottom: 1px solid rgba(255,255,255,0.1);
+                border-bottom: 1px solid rgba(51, 50, 48, 0.08);
             }
             .logo-brand {
-                height: 55px; /* Plus petit sur mobile */
+                height: 60px;
                 margin-bottom: 15px;
             }
             h1 { font-size: 2rem; }
-            h2 { font-size: 1.1rem; margin-bottom: 10px; }
-            p { font-size: 0.85rem; max-width: 100%; }
-            .btn { margin-top: 20px; padding: 10px 25px; }
+            h2 { font-size: 0.9rem; margin-bottom: 15px; }
+            p { font-size: 0.85rem; max-width: 90%; }
+            .btn { margin-top: 25px; padding: 10px 30px; }
         }
     </style>
+    <!-- Importation de polices élégantes depuis Google Fonts -->
+    <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
 
@@ -135,20 +139,18 @@
     <a href="https://cyos-event.be" class="half event">
         <img src="assets/images/logo.png" alt="CYOS Logo" class="logo-brand">
         <h1>CYOS</h1>
-        <h1>EVENT</h1>
         <h2>Choose Your Own Story</h2>
-        <p>De l'idée originale à la coordination du jour J, nous orchestrons vos plus beaux moments de vie.</p>
-        <div class="btn">Découvrir</div>
+        <p>De l'idée originale à la coordination du jour J, nous orchestrons avec éclat vos plus beaux moments de vie.</p>
+        <div class="btn">Découvrir l'univers</div>
     </a>
 
     <!-- Fenêtre CYOS HERITAGE -->
     <a href="https://cyos-heritage.be" class="half heritage">
         <img src="assets/images/logo.png" alt="CYOS Logo" class="logo-brand">
         <h1>CYOS</h1>
-        <h1>HERITAGE</h1>
         <h2>Continue Your Own Story</h2>
-        <p>Transmettez votre histoire, vos valeurs et préservez votre patrimoine familial pour les générations futures.</p>
-        <div class="btn">Découvrir</div>
+        <p>Transmettez vos mots, vos valeurs et organisez sereinement vos volontés pour guider ceux que vous aimez.</p>
+        <div class="btn">Découvrir l'univers</div>
     </a>
 
 </body>
