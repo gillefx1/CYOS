@@ -15,8 +15,7 @@
             display: flex;
             height: 100vh;
             overflow: hidden;
-            background-color: #fcfbfa; /* Blanc chaud / Ivoire */
-            color: #333230; /* Anthracite doux */
+            background-color: #121212; 
             position: relative;
         }
         .half {
@@ -33,7 +32,7 @@
             padding: 50px;
             padding-bottom: 80px; /* Espace pour éviter que le texte touche le footer */
         }
-        /* Style des logos - Dossier corrigé en assets/images/ */
+        /* Style des logos */
         .logo-brand {
             height: 80px; 
             width: auto;
@@ -44,34 +43,67 @@
         .half:hover .logo-brand {
             transform: scale(1.03);
         }
-        /* Fenêtre Événement : Tons lumineux, festifs et chaleureux */
+
+        /* ==========================================================================
+           FENÊTRE GAUCHE : CYOS HERITAGE (Design Noir Mat / Anthracite Profond)
+           ========================================================================== */
+        .heritage {
+            background: linear-gradient(rgba(18, 18, 18, 0.88), rgba(18, 18, 18, 0.95)), url('https://unsplash.com') center/cover;
+            color: #e5e5e0; /* Texte blanc cassé doux */
+        }
+        .heritage h1 {
+            color: #ffffff;
+        }
+        .heritage h2 {
+            color: #8e8e88; /* Teinte taupe/bronze */
+        }
+        .heritage p {
+            color: #c4c4be;
+        }
+        .heritage .btn {
+            border: 1px solid #ffffff;
+            color: #ffffff;
+        }
+        .heritage:hover .btn {
+            background: #ffffff;
+            color: #121212;
+        }
+
+        /* ==========================================================================
+           FENÊTRE DROITE : CYOS EVENT (Design Lumineux / Ivoire Chaleureux)
+           ========================================================================== */
         .event {
             background: linear-gradient(rgba(252, 251, 250, 0.82), rgba(252, 251, 250, 0.82)), url('https://unsplash.com') center/cover;
+            color: #333230; /* Texte anthracite doux */
+            border-left: 1px solid rgba(18, 18, 18, 0.15);
         }
-        /* Fenêtre Héritage : Tons sereins, papier texturé, intemporels */
-        .heritage {
-            background: linear-gradient(rgba(245, 242, 238, 0.85), rgba(245, 242, 238, 0.85)), url('https://unsplash.com') center/cover;
-            border-left: 1px solid rgba(51, 50, 48, 0.08);
+        .event h1 {
+            color: #1a1a19;
         }
-        /* Effets de survol raffinés sur ordinateur */
-        @media (min-width: 769px) {
-            .half:hover {
-                width: 54%;
-            }
-            .half:hover ~ .half {
-                width: 46%;
-            }
-            body:has(.heritage:hover) .event {
-                width: 46%;
-            }
+        .event h2 {
+            color: #8c857b; /* Teinte dorée/taupe douce */
         }
+        .event p {
+            color: #595754;
+        }
+        .event .btn {
+            border: 1px solid #333230;
+            color: #333230;
+        }
+        .event:hover .btn {
+            background: #333230;
+            color: #fcfbfa;
+        }
+
+        /* ==========================================================================
+           STRUCTURE COMMUNE & TYPOGRAPHIE
+           ========================================================================== */
         h1 {
             font-size: 2.8rem;
             margin-bottom: 5px;
             letter-spacing: 4px;
             font-weight: 300;
             text-transform: uppercase;
-            color: #1a1a19;
         }
         h2 {
             font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
@@ -80,22 +112,18 @@
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #8c857b; /* Teinte taupe/bronze douce */
         }
         p {
             font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
             font-size: 0.95rem;
             max-width: 360px;
             line-height: 1.7;
-            color: #595754;
             font-weight: 300;
         }
         .btn {
             font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
             margin-top: 35px;
             padding: 14px 40px;
-            border: 1px solid #333230;
-            color: #333230;
             text-transform: uppercase;
             font-size: 0.75rem;
             letter-spacing: 2px;
@@ -103,9 +131,18 @@
             background: transparent;
             transition: all 0.3s ease;
         }
-        .half:hover .btn {
-            background: #333230;
-            color: #fcfbfa;
+
+        /* Effets de survol raffinés sur ordinateur */
+        @media (min-width: 769px) {
+            .half:hover {
+                width: 54%;
+            }
+            .half:hover ~ .half {
+                width: 46%;
+            }
+            body:has(.event:hover) .heritage {
+                width: 46%;
+            }
         }
 
         /* Footer discret superposé au centre en bas */
@@ -128,10 +165,10 @@
             transition: color 0.3s ease;
         }
         .hub-footer a:hover {
-            color: #1a1a19;
+            color: #ffffff;
         }
         .hub-footer span {
-            color: rgba(51, 50, 48, 0.2);
+            color: rgba(255, 255, 255, 0.2);
         }
 
         /* Version Mobile & Tablette équilibrée */
@@ -147,8 +184,8 @@
                 padding: 40px 20px;
                 border-left: none;
             }
-            .half:first-child {
-                border-bottom: 1px solid rgba(51, 50, 48, 0.08);
+            .heritage {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
             .logo-brand {
                 height: 60px;
@@ -167,12 +204,14 @@
                 transform: none;
                 width: 100%;
                 justify-content: center;
-                background-color: #fcfbfa;
+                background-color: #121212;
                 padding: 20px;
                 gap: 15px;
                 flex-wrap: wrap;
-                border-top: 1px solid rgba(51, 50, 48, 0.08);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
             }
+            .hub-footer a { color: #8c857b; }
+            .hub-footer a:hover { color: #ffffff; }
             .hub-footer span { display: none; } /* Cache les séparateurs sur mobile */
         }
     </style>
@@ -181,21 +220,21 @@
 </head>
 <body>
 
-    <!-- Fenêtre CYOS EVENT -->
+    <!-- Fenêtre CYOS HERITAGE (À Gauche - Sombre) -->
+    <a href="https://cyos-heritage.be" class="half heritage">
+        <img src="assets/images/logo.png" alt="CYOS Logo" class="logo-brand" style="filter: brightness(0) invert(1);">
+        <h1>CYOS</h1>
+        <h2>Continue Your Own Story</h2>
+        <p>Transmettez vos mots, vos valeurs et organisez sereinement vos volontés pour guider ceux que vous aimez.</p>
+        <div class="btn">Découvrir l'univers</div>
+    </a>
+
+    <!-- Fenêtre CYOS EVENT (À Droite - Lumineuse) -->
     <a href="https://cyos-event.be" class="half event">
         <img src="assets/images/logo.png" alt="CYOS Logo" class="logo-brand">
         <h1>CYOS</h1>
         <h2>Choose Your Own Story</h2>
         <p>De l'idée originale à la coordination du jour J, nous orchestrons avec éclat vos plus beaux moments de vie.</p>
-        <div class="btn">Découvrir l'univers</div>
-    </a>
-
-    <!-- Fenêtre CYOS HERITAGE -->
-    <a href="https://cyos-heritage.be" class="half heritage">
-        <img src="assets/images/logo.png" alt="CYOS Logo" class="logo-brand">
-        <h1>CYOS</h1>
-        <h2>Continue Your Own Story</h2>
-        <p>Transmettez vos mots, vos valeurs et organisez sereinement vos volontés pour guider ceux que vous aimez.</p>
         <div class="btn">Découvrir l'univers</div>
     </a>
 
