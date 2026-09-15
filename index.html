@@ -17,6 +17,7 @@
             overflow: hidden;
             background-color: #fcfbfa; /* Blanc chaud / Ivoire */
             color: #333230; /* Anthracite doux */
+            position: relative;
         }
         .half {
             position: relative;
@@ -30,6 +31,7 @@
             text-decoration: none;
             transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
             padding: 50px;
+            padding-bottom: 80px; /* Espace pour éviter que le texte touche le footer */
         }
         /* Style des logos - Dossier corrigé en assets/images/ */
         .logo-brand {
@@ -105,11 +107,39 @@
             background: #333230;
             color: #fcfbfa;
         }
+
+        /* Footer discret superposé au centre en bas */
+        .hub-footer {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            gap: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .hub-footer a {
+            color: #8c857b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .hub-footer a:hover {
+            color: #1a1a19;
+        }
+        .hub-footer span {
+            color: rgba(51, 50, 48, 0.2);
+        }
+
         /* Version Mobile & Tablette équilibrée */
         @media (max-width: 768px) {
             body { 
                 flex-direction: column; 
                 overflow-y: auto; 
+                height: auto;
             }
             .half { 
                 width: 100% !important; 
@@ -128,6 +158,22 @@
             h2 { font-size: 0.9rem; margin-bottom: 15px; }
             p { font-size: 0.85rem; max-width: 90%; }
             .btn { margin-top: 25px; padding: 10px 30px; }
+            
+            /* Repositionnement du footer sur mobile */
+            .hub-footer {
+                position: relative;
+                bottom: 0;
+                left: 0;
+                transform: none;
+                width: 100%;
+                justify-content: center;
+                background-color: #fcfbfa;
+                padding: 20px;
+                gap: 15px;
+                flex-wrap: wrap;
+                border-top: 1px solid rgba(51, 50, 48, 0.08);
+            }
+            .hub-footer span { display: none; } /* Cache les séparateurs sur mobile */
         }
     </style>
     <!-- Importation de polices élégantes depuis Google Fonts -->
@@ -152,6 +198,15 @@
         <p>Transmettez vos mots, vos valeurs et organisez sereinement vos volontés pour guider ceux que vous aimez.</p>
         <div class="btn">Découvrir l'univers</div>
     </a>
+
+    <!-- Liens réglementaires bas de page -->
+    <footer class="hub-footer">
+        <a href="mentions-legales.html">Mentions Légales</a>
+        <span>|</span>
+        <a href="cgv.html">CGV</a>
+        <span>|</span>
+        <a href="politique-confidentialite.html">Confidentialité</a>
+    </footer>
 
 </body>
 </html>
