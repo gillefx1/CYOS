@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Valeurs | CYOS</title>
+    <!-- Importation des polices élégantes de l'écosystème CYOS -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+            background-color: #fcfbfa; /* Blanc chaud / Ivoire identique aux CGV */
+            color: #333230; /* Anthracite doux */
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ==========================================================================
+           1. EN-TÊTE / NAVIGATION
+           ========================================================================== */
+        .main-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 8%;
+            background-color: #fcfbfa;
+            border-bottom: 1px solid rgba(51, 50, 48, 0.08);
+        }
+        .main-header .logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .main-header .logo img:hover {
+            transform: scale(1.02);
+        }
+
+        /* ==========================================================================
+           2. CONTENU TEXTUEL (STYLE RÉDACTIONNEL ÉLÉGANT)
+           ========================================================================== */
+        .legal-main {
+            flex: 1;
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #1a1a19;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .legal-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8c857b;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #1a1a19;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(51, 50, 48, 0.1);
+            padding-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        p {
+            font-size: 0.95rem;
+            color: #595754;
+            margin-bottom: 15px;
+            font-weight: 300;
+            text-align: justify;
+        }
+        a {
+            color: #8c857b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #1a1a19;
+        }
+
+        /* ==========================================================================
+           3. PIED DE PAGE REGLEMENTAIRE
+           ========================================================================== */
+        .hub-footer {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 30px 20px;
+            background-color: #fcfbfa;
+            border-top: 1px solid rgba(51, 50, 48, 0.08);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .hub-footer a {
+            color: #8c857b;
+        }
+        .hub-footer a:hover {
+            color: #1a1a19;
+        }
+        .hub-footer span {
+            color: rgba(51, 50, 48, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .legal-main { margin: 40px auto; }
+            .hub-footer { gap: 15px; flex-wrap: wrap; }
+            .hub-footer span { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu de Navigation (Logo redirigeant vers l'index global) -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="CYOS Global Logo">
+            </a>
+        </div>
+    </header>
+
+    <!-- Contenu des Valeurs -->
+    <main class="legal-main">
+        <h1>Nos Valeurs</h1>
+        <p class="legal-subtitle">L'ADN de l'écosystème CYOS</p>
+
+        <p>Parce que chaque grand moment de vie et chaque transmission méritent un accompagnement d'exception, l'univers de CYOS s'articule autour de principes fondamentaux indissociables. Ces valeurs guident nos pas, inspirent nos créations et scellent notre engagement envers vous.</p>
+
+        <h2>1. Authenticité</h2>
+        <p>Chaque projet raconte votre histoire. Nous créons des événements et des coffrets héritage qui reflètent votre personnalité, vos envies et votre univers, sans jamais reproduire un modèle existant. Chaque transmission est sincère, personnelle et fidèle à celui ou celle qui la laisse.</p>
+
+        <h2>2. Excellence du service</h2>
+        <p>Le souci du détail guide chacune de nos actions. We vous offrons une expérience fluide, professionnelle et mémorable, que ce soit dans l’organisation d’un événement ou dans la préparation d’un héritage émotionnel. Chaque élément est pensé avec précision, respect et exigence.</p>
+
+        <h2>3. Élégance</h2>
+        <p>Notre signature visuelle repose sur des choix raffinés, cohérents et intemporels. Les événements, les ambiances et les coffrets héritage sont conçus avec une esthétique délicate et haut de gamme, pour sublimer les moments importants de votre vie.</p>
+
+        <h2>4. Créativité</h2>
+        <p>Nous imaginons des concepts originaux, des mises en scène uniques et des univers immersifs qui sortent de l’ordinaire. La créativité est le moteur de CYOS, l’essence de nos réalisations et la clé de vos projets uniques.</p>
+
+        <h2>5. Convivialité</h2>
+        <p>Nous créons des moments de partage, de connexion et d’émotion. L’humain est au centre de chaque projet, et notre approche familiale vous accompagne avec douceur, bienveillance et chaleur.</p>
+
+        <h2>6. Famille</h2>
+        <p>CYOS est né de notre histoire, de nos enfants et de notre envie de transmettre. Cette dimension familiale guide notre manière de travailler, d’écouter et d’accompagner. Nous plaçons la famille, la mémoire et la continuité au cœur de chaque création.</p>
+
+        <h2>7. Personnalisation</h2>
+        <p>Rien n’est standard. Chaque événement est une œuvre unique et chaque coffret héritage est conçu sur mesure. Vos volontés, vos messages, vos symboles, votre ambiance et vos détails sont adaptés à vous, pour créer une transmission authentique et profondément significative.</p>
+
+        <h2>8. Fiabilité</h2>
+        <p>Nous vous offrons un accompagnement structuré, rassurant et professionnel. La confiance est essentielle, et nous nous engageons à être présents, disponibles et rigoureux à chaque étape de votre projet.</p>
+    </main>
+
+    <!-- Liens réglementaires bas de page interconnectés -->
+    <footer class="hub-footer">
+        <a href="valeurs.html">Nos Valeurs</a>
+        <span>|</span>
+        <a href="mentions-legales.html">Mentions Légales</a>
+        <span>|</span>
+        <a href="cgv.html">CGV</a>
+        <span>|</span>
+        <a href="politique-confidentialite.html">Confidentialité</a>
+    </footer>
+
+</body>
+</html>
