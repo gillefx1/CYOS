@@ -46,7 +46,7 @@
 
         /* ==========================================================================
            FENÊTRE GAUCHE : CYOS HERITAGE (Design Noir Mat / Anthracite Profond)
-           ========================================================================== */
+           ========================================================================= */
         .heritage {
             background: linear-gradient(rgba(18, 18, 18, 0.88), rgba(18, 18, 18, 0.95)), url('https://unsplash.com') center/cover;
             color: #e5e5e0; /* Texte blanc cassé doux */
@@ -70,12 +70,12 @@
         }
 
         /* ==========================================================================
-           FENÊTRE DROITE : CYOS EVENT (Design Lumineux / Ivoire Chaleureux)
-           ========================================================================== */
+           FENÊTRE DROITE : CYOS EVENT (Corrigé : Fond Blanc Uni de CYOS Event)
+           ========================================================================= */
         .event {
-            background: linear-gradient(rgba(252, 251, 250, 0.82), rgba(252, 251, 250, 0.82)), url('https://unsplash.com') center/cover;
+            background: #ffffff; /* Élimination du dégradé et de la photo pour être raccord avec le site */
             color: #333230; /* Texte anthracite doux */
-            border-left: 1px solid rgba(18, 18, 18, 0.15);
+            border-left: 1px solid rgba(18, 18, 18, 0.08);
         }
         .event h1 {
             color: #1a1a19;
@@ -92,12 +92,12 @@
         }
         .event:hover .btn {
             background: #333230;
-            color: #f8f5f0;
+            color: #fcfbfa;
         }
 
         /* ==========================================================================
            STRUCTURE COMMUNE & TYPOGRAPHIE
-           ========================================================================== */
+           ========================================================================= */
         h1 {
             font-size: 2.8rem;
             margin-bottom: 5px;
@@ -111,6 +111,11 @@
             margin-bottom: 25px;
             font-weight: 400;
             text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        /* Style spécifique pour faire ressortir les mots importants en gras dans les h2 */
+        h2 strong {
+            font-weight: 700;
             letter-spacing: 2px;
         }
         p {
@@ -215,26 +220,27 @@
             .hub-footer span { display: none; } /* Cache les séparateurs sur mobile */
         }
     </style>
-    <!-- Importation de polices élégantes depuis Google Fonts -->
+    <!-- Importation des polices premium de l'écosystème -->
     <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
 
     <!-- Fenêtre CYOS HERITAGE (À Gauche - Sombre) -->
-    <a href="https://cyos-heritage.be" class="half heritage">
-    <!-- <img src="assets/images/logo.png" alt="CYOS Logo" class="logo-brand" style="filter: brightness(0) invert(1);"> -->
+    <a href="https://www.cyos-heritage.be" class="half heritage">
         <img src="assets/images/logo.png" alt="CYOS Logo" class="logo-brand">
         <h1>CYOS</h1>
-        <h2>Continue Your Own Story</h2>
+        <!-- Ajout de la balise strong pour mettre CONTINUE en gras -->
+        <h2><strong>Continue</strong> Your Own Story</h2>
         <p>Transmettez vos mots, vos valeurs et organisez sereinement vos volontés pour guider ceux que vous aimez.</p>
         <div class="btn">Découvrir l'univers</div>
     </a>
 
-    <!-- Fenêtre CYOS EVENT (À Droite - Lumineuse) -->
-    <a href="https://cyos-event.be" class="half event">
+    <!-- Fenêtre CYOS EVENT (À Droite - Lumineuse et Fond blanc corrigé) -->
+    <a href="https://www.cyos-event.be" class="half event">
         <img src="assets/images/logo.png" alt="CYOS Logo" class="logo-brand">
         <h1>CYOS</h1>
-        <h2>Choose Your Own Story</h2>
+        <!-- Ajout de la balise strong pour mettre CHOOSE en gras -->
+        <h2><strong>Choose</strong> Your Own Story</h2>
         <p>De l'idée originale à la coordination du jour J, nous orchestrons avec éclat vos plus beaux moments de vie.</p>
         <div class="btn">Découvrir l'univers</div>
     </a>
